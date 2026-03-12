@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistem Absensi Ekstrakurikuler</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+
+<div class="title">
+Sistem Absensi Ekstrakurikuler
+</div>
+
+<div class="container">
+
+<h2>Generator QR Code Siswa</h2>
+
+<div class="form-group">
+<input id="namaQR" placeholder="Nama Siswa">
+<input id="kelasQR" placeholder="Kelas">
+
+<select id="ekskulQR">
+<option value="">Pilih Ekskul</option>
+<option>Padus</option>
+<option>Futsal</option>
+<option>Basket</option>
+<option>Podcas</option>
+<option>Animasi</option>
+<option>Band</option>
+<option>Voli</option>
+</select>
+</div>
+
+<button onclick="buatQR()">Buat QR Code</button>
+
+<div id="qrcode"></div>
+
+</div>
+
+<div class="container">
+
+<h2>Scan QR Absensi</h2>
+
+<div id="reader"></div>
+
+</div>
+
+<div class="container">
+
+<h2>Input Manual</h2>
+
+<div class="form-group">
+<input id="nama" placeholder="Nama">
+<input id="kelas" placeholder="Kelas">
+
+<select id="ekskul">
+<option value="">Pilih Ekskul</option>
+<option>Padus</option>
+<option>Futsal</option>
+<option>Basket</option>
+<option>Podcas</option>
+<option>Animasi</option>
+<option>Band</option>
+<option>Voli</option>
+</select>
+</div>
+
+<button onclick="tambah()">Hadir</button>
+<button onclick="exportCSV()">Export Excel</button>
+
+<div class="table-wrapper">
+
+<table id="tabel">
+<thead>
+<tr>
+<th>No</th>
+<th>Nama</th>
+<th>Kelas</th>
+<th>Ekskul</th>
+<th>Waktu</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+</table>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
